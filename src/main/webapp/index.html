@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QG技术论坛</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .hidden { display: none; }
+    .post { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; }
+    button { cursor: pointer; padding: 5px 10px; }
+  </style>
+</head>
+<body>
+<!-- 登录/注册区域 -->
+<div id="auth-area">
+  <h2>登录</h2>
+  <input type="text" id="username" placeholder="用户名">
+  <input type="password" id="password" placeholder="密码">
+  <button onclick="login()">登录</button>
+  <button onclick="showRegister()">注册</button>
+</div>
+
+<!-- 注册表单 -->
+<div id="register-area" class="hidden">
+  <h2>注册</h2>
+  <input type="text" id="reg-username" placeholder="用户名">
+  <input type="password" id="reg-password" placeholder="密码">
+  <button onclick="register()">提交注册</button>
+  <button onclick="hideRegister()">返回登录</button>
+</div>
+
+<!-- 主内容区 -->
+<div id="main-content" class="hidden">
+  <h1>QG技术论坛</h1>
+  <div>
+    <button onclick="logout()">退出登录</button>
+    <button onclick="showPostForm()">发帖</button>
+  </div>
+
+  <!-- 发帖表单 -->
+  <div id="post-form" class="hidden">
+    <h3>发布新帖</h3>
+    <input type="text" id="post-title" placeholder="标题">
+    <textarea id="post-content" rows="4" placeholder="内容"></textarea>
+    <button onclick="submitPost()">提交</button>
+    <button onclick="hidePostForm()">取消</button>
+  </div>
+
+  <!-- 帖子列表 -->
+  <div id="posts-container"></div>
+</div>
+
+<script src="forum.js"></script>
+</body>
+</html>
